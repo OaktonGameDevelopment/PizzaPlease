@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TEST_PhoneScript : Interactable
+public class TEST_PhoneScript : Interactable//This is a Test class to Test the Interactable Script
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     protected override void interact()
     {
         print("phone functions");
     }
-
 }
