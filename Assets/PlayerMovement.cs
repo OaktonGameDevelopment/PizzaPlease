@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         mainCamera = transform.Find("Main Camera");
-        Cursor.lockState = CursorLockMode.Locked;//lock cursor
+        //Cursor.lockState = CursorLockMode.Locked;//lock cursor
     }
     /*
      *Precondition: Runs on Everyframe
