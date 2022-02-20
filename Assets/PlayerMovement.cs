@@ -17,15 +17,30 @@ public class PlayerMovement : MonoBehaviour
     private float mouseY;
     private Vector3 moveDirection = new Vector3();
     private float moveDirectionY;
-    // Start is called before the first frame update
+    /*
+     * Precondition: Runs on start
+     * the mainCanrea must be a child of the player gameObject and be named "Main Camera"
+     * player gameObject must have a charactorController, no rigidBody is needed
+     * Postcondition:initialize variables and lockes the mouse
+    */
     void Start()
     {
         cc = GetComponent<CharacterController>();
         mainCamera = transform.Find("Main Camera");
         Cursor.lockState = CursorLockMode.Locked;//lock cursor
     }
-
-    // Update is called once per frame
+    /*
+     *Precondition: Runs on Everyframe
+     *speed must be > 0 for object to move
+     *jumpHeight must be > 0 for object to jump
+     *gravity must be > 0 for object to fall
+     *mouseSenseX and mouseSenseY must be > 0 for the player to look in different directions
+     *input settings must be default values
+     *Postconditions: Player is moved using WASD
+     *Player can look in different directions by moving the mouse
+     *SerializedFields values can be adjusted to adjust player movement
+     */
+    //Controls MouseMovements and WASD Movements
     void Update()
     {
         moveDirection = transform.TransformDirection(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"))) * speed;
