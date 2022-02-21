@@ -7,10 +7,6 @@ public class Interactable : MonoBehaviour //Superclass for all interactable obje
     private RaycastHit objectHit;//the RaycastHit info of the current 
     private Color originalColor;//stores the original color of the objectHit
     private RaycastHit lastObjectHit;//Stores the RaycastHit info last object hit
-    void Start()
-    {
-        originalColor = objectHit.collider.GetComponent<MeshRenderer>().material.color;
-    }
     void Update()
     {
         //This first line is for debugging where the direction ray will land
@@ -20,9 +16,9 @@ public class Interactable : MonoBehaviour //Superclass for all interactable obje
         {
             lastObjectHit.collider.GetComponent<MeshRenderer>().material.color = originalColor;//revert the yellow color of the lastObjectHit
         }
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out objectHit) && objectHit.collider.GetComponentInParent<Interactable>() != null)//if the center of the screen is on a interactable object(an object with a script inherited from Interactable)
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out objectHit) && objectHit.collider.GetComponentInParent<Interactable>() == GetComponentInParent<Interactable>())//if the center of the screen is on a interactable object(an object with a script inherited from Interactable)
         {
-
+            originalColor = objectHit.collider.GetComponent<MeshRenderer>().material.color;
             objectHit.collider.GetComponent<MeshRenderer>().material.color = Color.yellow;//change the color of the current interactable object to yellow
             lastObjectHit = objectHit;
             if (Input.GetKeyDown("e"))
