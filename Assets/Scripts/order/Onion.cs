@@ -12,6 +12,6 @@ public class Onion : Ingredient
 
     public override void playAudio()
     {
-        FindObjectOfType<AudioManager>().Play("onions" + Random.Range(1f, 1f));
+        FindObjectOfType<AudioManager>().Play("onions1");
     }
 }
