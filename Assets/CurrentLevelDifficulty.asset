@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dcffb352f90994c9821fee0b6f02e8, type: 3}
   m_Name: CurrentLevelDifficulty
   m_EditorClassIdentifier: 
-  maxNumCustomers: 0
-  customerDelay: 0
+  maxNumCustomers: 3
+  customerDelay: 100
   customerPatienceDecay: 0
   customerTolerenceLevel: 0
