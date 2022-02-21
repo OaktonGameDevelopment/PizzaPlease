@@ -9,4 +9,9 @@ public class Onion : Ingredient
     {
         name = getPossibleToppings()[6];
     }
+
+    public override void playAudio()
+    {
+        FindObjectOfType<AudioManager>().Play("onions" + Random.Range(1f, 1f));
+    }
 }

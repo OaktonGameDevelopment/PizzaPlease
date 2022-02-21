@@ -12,6 +12,7 @@ public abstract class Ingredient : MonoBehaviour
     {
         return possibleToppings;
     }
-    // Start is called before the first frame update
+
+    public abstract void playAudio();
 
 }

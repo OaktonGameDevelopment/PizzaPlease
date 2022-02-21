@@ -30,6 +30,14 @@ public class Pizza : MonoBehaviour
         size = sz;
     }
 
+    public void toAudio()
+    {
+        foreach (Ingredient i in ingredients)
+        {
+            i.playAudio();
+        }
+    }
+
 
 
 }
