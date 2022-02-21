@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Pizza : MonoBehaviour
 {
-    private string[] possibleToppings = { "Mushrooms", "Anchovies", "Pepperoni", "Bell Peppers", "Pineapple", "Olives" };
+    private Ingredient[] ingredients;
+    private int numToppings = Random.Range(1,4);
     private string[] possibleLocations = { "The White House", "Blake Avenue", "Andale Drive", "Andover Road", "Dovedale South", "Durham Way North" };
     private string[] possibleSizes = { "large", "medium", "small" };
-    private string toppings;
     private string location;
     private string size;
 
@@ -16,13 +16,16 @@ public class Pizza : MonoBehaviour
     public Pizza()
     {
         System.Random rnd = new System.Random();
-        toppings = possibleToppings[rnd.Next(5)];
+        for (int i = 0; i < numToppings; i++)
+        {
+            //toppings[i] = new Ingredient();
+        }
         location = possibleLocations[rnd.Next(5)];
         size = possibleSizes[rnd.Next(2)];
     }
 
     public Pizza(string tp, string lc, string sz) {
-        toppings = tp;
+       // toppings = tp;
         location = lc;
         size = sz;
     }
