@@ -26,8 +26,13 @@ public class Customer_Manager : MonoBehaviour
                 c.leave();
             }
         }
-        if(!customerQueued)
+        if (!customerQueued)
             curCustomerDelay -= Time.deltaTime;
+        else if (customers.Count < curLevelDifficulty.maxNumCustomers)
+        {
+            customers.Add(new Customer());
+            customerQueued = false;
+        }
         if(curCustomerDelay<=0)
         {
             if (customers.Count >= curLevelDifficulty.maxNumCustomers)
