@@ -18,6 +18,14 @@ public class Customer_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach(Customer c in customers)
+        {
+            c.decresePatience();
+            if(c.patience<=0)
+            {
+                c.leave();
+            }
+        }
         if(!customerQueued)
             curCustomerDelay -= Time.deltaTime;
         if(curCustomerDelay<=0)

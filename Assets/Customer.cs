@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Customer : Interactable
 {
-    public int patience;
+    public int patience{ get; set; }
     public Customer()
     {
         //summons a new Customer
@@ -13,9 +13,16 @@ public class Customer : Interactable
     public void leave()
     {
         //animation for leaving restaraunt
+        Destroy(gameObject);
+    }
+    public void decresePatience()
+    {
+        patience--;
+        gameObject.GetComponent<MeshRenderer>().material.color += Color.red;
     }
     protected override void interact() 
     {
         //start interaction with customer
+        Debug.Log("interact with customer");
     }
 }
