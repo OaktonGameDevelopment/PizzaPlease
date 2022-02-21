@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ingredient : MonoBehaviour
+public class Ingredient
 {
-    string name;
+    protected string name;
+    [SerializeField] protected AudioManager audioManager;
     bool real;
-    private string[] possibleToppings = { "Mushrooms", "Anchovies", "Pepperoni", "Bell Peppers", "Pineapple", "Olives", "Onions" };
+    private static List<string> possibleToppings = new List<string>{ "mushrooms", "pepperoni", "bellPeppers", "pineapple", "olives", "onions" };
 
-    public string[] getPossibleToppings()
+    public Ingredient()
     {
-        return possibleToppings;
+        int i = Random.Range(0, possibleToppings.Count);
+        name = possibleToppings[i];
+        possibleToppings.RemoveAt(i);
+    }
+    public ArrayList getPossibleToppings()
+    {
+        //return possibleToppings;
     }
 
-    public abstract void playAudio();
+    public void playAudio()
+    {
+        audioManager.Play("onions1");
+    }
 
 }

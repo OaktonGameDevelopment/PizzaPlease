@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pizza : MonoBehaviour
+public class Pizza
 {
-    private Onion[] ingredients;
+    private Ingredient[] ingredients;
     private Onion o = new Onion();
     private int numToppings = Random.Range(1,4);
     private string[] possibleLocations = { "The White House", "Blake Avenue", "Andale Drive", "Andover Road", "Dovedale South", "Durham Way North" };
