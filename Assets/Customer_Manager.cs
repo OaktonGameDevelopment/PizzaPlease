@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Customer_Manager : MonoBehaviour
 {
-    public List<GameObject> customers;
+    public List<GameObject> customers;//Current customers in scene
     [SerializeField] private LevelDifficulty curLevelDifficulty;
     [SerializeField] private GameObject customerPrefab;
     private float curCustomerDelay;
@@ -19,13 +19,14 @@ public class Customer_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject c in customers)
+        foreach(GameObject c in customers)//what happens to each customer on each frame
         {
-            Customer cScript = c.GetComponent<Customer>();
-            cScript.decresePatience();
+            Customer cScript = c.GetComponent<Customer>();//Customer script for each customer is customers
+            cScript.patience-= (int)(curLevelDifficulty.customerPatienceDecay * Time.deltaTime);
             if(cScript.patience<=0)
-            {
+            {  
                 cScript.leave();
+                customers.Remove(c);
             }
         }
         if (!customerQueued)
@@ -38,12 +39,12 @@ public class Customer_Manager : MonoBehaviour
         if(curCustomerDelay<=0)
         {
             if (customers.Count >= curLevelDifficulty.maxNumCustomers)
-            {
-                customers.Add(Instantiate(customerPrefab));
+            {  
+                customerQueued = true;
+                curCustomerDelay = curLevelDifficulty.customerDelay;
             }
             else
-                customerQueued = true;
-            curCustomerDelay = curLevelDifficulty.customerDelay;
+                customers.Add(Instantiate(customerPrefab)); 
         }
     }
 }
