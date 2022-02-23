@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dcffb352f90994c9821fee0b6f02e8, type: 3}
   m_Name: CurrentLevelDifficulty
   m_EditorClassIdentifier: 
-  maxNumCustomers: 3
+  maxNumCustomers: 1
   customerDelay: 100
-  customerPatienceDecay: 0
+  customerPatienceDecay: 30
   customerTolerenceLevel: 0
+  toppingsAvaliable:
+  - Pineapple
+  - Greenthing
+  - Pepperoni
+  toppingsUnavaliable:
+  - Beef
