@@ -23,28 +23,29 @@ public class Customer_Manager : MonoBehaviour
         {
             Customer cScript = c.GetComponent<Customer>();//Customer script for each customer is customers
             cScript.patience-= (int)(curLevelDifficulty.customerPatienceDecay * Time.deltaTime);
+            Debug.Log(cScript.patience);
             if(cScript.patience<=0)
-            {  
-                cScript.leave();
+            {
                 customers.Remove(c);
+                cScript.leave();       
             }
         }
-        if (!customerQueued)
+        if (!customerQueued)//if there is a in queue dont decrease the current time it takes for the next customer to arrive
             curCustomerDelay -= Time.deltaTime * curLevelDifficulty.customerPatienceDecay;
-        else if (customers.Count < curLevelDifficulty.maxNumCustomers)
+        else if (customers.Count < curLevelDifficulty.maxNumCustomers)//if there is a customer in queue and there are less customers then max add the queued customer and resume decreaseing the current time it takes for the next customer to arrive
         {
             customers.Add(Instantiate(customerPrefab));
             customerQueued = false;
         }
-        if(curCustomerDelay<=0)
+        if(curCustomerDelay<=0)//when the timer for customer delay hits 0
         {
-            if (customers.Count >= curLevelDifficulty.maxNumCustomers)
+            if (customers.Count >= curLevelDifficulty.maxNumCustomers)//if the restaraunt is full put aa customer on queue
             {  
                 customerQueued = true;
-                curCustomerDelay = curLevelDifficulty.customerDelay;
             }
             else
-                customers.Add(Instantiate(customerPrefab)); 
+                customers.Add(Instantiate(customerPrefab));
+            curCustomerDelay = curLevelDifficulty.customerDelay;
         }
     }
 }
