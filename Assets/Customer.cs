@@ -32,32 +32,43 @@ public class Customer : Interactable
     {
         //start interaction with customer
         Debug.Log("interact with customer");
-        StartCoroutine(startOrder());
         
 
-        Debug.Log(""+pizza.getIngredients());
+
+        Debug.Log(pizza.ToString());
         List<Ingredient> ingredients = pizza.getIngredients();
-
-        for (int i = 0; i < ingredients.Count; i++)
-        {
-            Debug.Log("inside forloop");
-            StartCoroutine(Wait(ingredients, i));
-           
-
-
-        }
+        StartCoroutine(StartOrder(ingredients));
+        
         Debug.Log("done");
     }
     
-    IEnumerator startOrder()
+    IEnumerator StartOrder(List<Ingredient> ingredients)
     {
-        FindObjectOfType<AudioManager>().Play("startorder" + Random.Range(1f, 1f));
-        yield return new WaitForSeconds(3f);
-    }
-    IEnumerator Wait(List<Ingredient> ingredients, int i)
-    {
-        FindObjectOfType<AudioManager>().Play(ingredients[i].getName() + "1");
-        yield return new WaitForSeconds(1f);
+        FindObjectOfType<AudioManager>().Play("startorder" + Random.Range(1,2));
+        yield return new WaitForSeconds(2f);
+        Debug.Log("wait");
+        StartCoroutine(WaitBeforeEachIngredient(ingredients));
         
+        Debug.Log("outsideLoop");
+    }
+    IEnumerator WaitBeforeEachIngredient(List<Ingredient> ingredients)
+    {
+        for (int j = 0; j < ingredients.Count; j++)
+        {
+            Debug.Log("nside forloop");
+            Debug.Log("waitbeforeeachbefore");
+            FindObjectOfType<AudioManager>().Play(ingredients[j].getName() + Random.Range(1,4));
+            yield return new WaitForSeconds(1.69f);
+            Debug.Log("waitbeforeeachafter");
+            Debug.Log("donewithloop");
+
+
+
+        }
+        
+        
+
+
+
     }
 }

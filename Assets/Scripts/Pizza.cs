@@ -45,6 +45,17 @@ public class Pizza
         return ingredients;
     }
 
+    //returns all the ingredients listed in a string.
+    public override string ToString()
+    {
+        string result = "";
+        foreach (Ingredient i in ingredients)
+        {
+            result += i.getName();
+        }
+        return result;
+    }
+
 
 
 }
