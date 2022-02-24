@@ -15,7 +15,7 @@ public class Ingredient
         name = possibleToppings[i];
         possibleToppings.RemoveAt(i);
         */
-        name = "onion";
+        name = "onions";
     }
     public List<string> getPossibleToppings()
     {
@@ -24,6 +24,7 @@ public class Ingredient
 
     public void playAudio()
     {
+        
         audioManager.Play("onions1");
     }
 

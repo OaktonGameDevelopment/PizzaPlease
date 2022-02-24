@@ -11,10 +11,13 @@ public class Customer : Interactable
         //summons a new Customer
         //animation for entering the restaraunt
         Debug.Log("customer constructor");
-        pizza = new Pizza();
+        
         patience = 100;
     }
-
+    public void Start()
+    {
+        pizza = new Pizza();
+    }
     public void leave()
     {
         //animation for leaving restaraunt
@@ -29,7 +32,8 @@ public class Customer : Interactable
     {
         //start interaction with customer
         Debug.Log("interact with customer");
-        FindObjectOfType<AudioManager>().Play("startorder" + Random.Range(1f, 1f));
+        StartCoroutine(startOrder());
+        
 
         Debug.Log(""+pizza.getIngredients());
         List<Ingredient> ingredients = pizza.getIngredients();
@@ -37,8 +41,23 @@ public class Customer : Interactable
         for (int i = 0; i < ingredients.Count; i++)
         {
             Debug.Log("inside forloop");
-            FindObjectOfType<AudioManager>().Play(ingredients[i].getName()+"1");
+            StartCoroutine(Wait(ingredients, i));
+           
+
+
         }
         Debug.Log("done");
+    }
+    
+    IEnumerator startOrder()
+    {
+        FindObjectOfType<AudioManager>().Play("startorder" + Random.Range(1f, 1f));
+        yield return new WaitForSeconds(3f);
+    }
+    IEnumerator Wait(List<Ingredient> ingredients, int i)
+    {
+        FindObjectOfType<AudioManager>().Play(ingredients[i].getName() + "1");
+        yield return new WaitForSeconds(1f);
+        
     }
 }

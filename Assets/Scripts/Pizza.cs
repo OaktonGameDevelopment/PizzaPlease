@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pizza
 {
-    private List<Ingredient> ingredients;
+    private List<Ingredient> ingredients = new List<Ingredient>();
     private int numToppings = Random.Range(1,4);
     private string[] possibleLocations = { "The White House", "Blake Avenue", "Andale Drive", "Andover Road", "Dovedale South", "Durham Way North" };
     private string[] possibleSizes = { "large", "medium", "small" };
