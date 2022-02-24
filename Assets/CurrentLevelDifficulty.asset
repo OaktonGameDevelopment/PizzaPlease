@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxNumCustomers: 1
   customerDelay: 100
-  customerPatienceDecay: 30
+  customerPatienceDecay: 100
   customerTolerenceLevel: 0
   toppingsAvaliable:
   - Pineapple

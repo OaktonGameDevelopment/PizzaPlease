@@ -9,6 +9,9 @@ public class LevelDifficulty : ScriptableObject //This class will hold the infor
     public float customerPatienceDecay;//the speed at which customers lost patience
     public float customerTolerenceLevel;//the amount of time the customers have until they start to lose patience
     public List<string> toppingsAvaliable;
-    public List<string> toppingsUnavaliable;
-    //add more here if you want
+    public List<string> toppingsUnavaliable;  
+    public List<string> locationsAvaliable;
+    public List<string> locationsUnavaliable;
+    public List<string> sizesAvaliable;
+    public List<string> sizesUnavalable;
 }
