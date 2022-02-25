@@ -15,10 +15,16 @@ MonoBehaviour:
   maxNumCustomers: 1
   customerDelay: 100
   customerPatienceDecay: 100
-  customerTolerenceLevel: 0
-  toppingsAvaliable:
-  - Pineapple
-  - Greenthing
-  - Pepperoni
+  toppingsAvaliable: []
   toppingsUnavaliable:
-  - Beef
+  - Sausage
+  - Pineapple
+  - Peppers
+  - Pepperoni
+  - Onions
+  locationsAvaliable: []
+  locationsUnavaliable: []
+  saucesAvaliable: []
+  saucesUnavalable: []
+  sizesAvaliable: []
+  sizesUnavalable: []
