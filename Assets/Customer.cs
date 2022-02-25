@@ -6,6 +6,7 @@ public class Customer : Interactable
 {
     public Pizza pizza;
     public int patience{ get; set; }
+    public LevelDifficulty poopoo;
     public Customer()
     {
         //summons a new Customer
@@ -15,7 +16,7 @@ public class Customer : Interactable
     }
     public void Start()
     {
-        pizza = new Pizza();
+        pizza = new Pizza(poopoo.toppingsAvaliable, poopoo.toppingsUnavaliable, poopoo.locationsAvaliable);
     }
     public void leave()
     {

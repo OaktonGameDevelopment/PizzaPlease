@@ -15,4 +15,6 @@ public class LevelDifficulty : ScriptableObject //This class will hold the infor
     public List<string> saucesUnavalable;
     public List<string> sizesAvaliable;
     public List<string> sizesUnavalable;
+
+    
 }

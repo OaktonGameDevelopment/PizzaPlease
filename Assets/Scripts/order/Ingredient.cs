@@ -7,15 +7,18 @@ public class Ingredient
     protected string name;
     [SerializeField] protected AudioManager audioManager;
     bool real;
-    public static List<string> possibleToppings = new List<string> { "mushrooms", "pepperoni", "bellPeppers", "pineapple", "olives", "onions" };
 
-    public Ingredient()
+    public static List<string> possibleToppings;
+
+    public Ingredient(List<string> ingredientNames, List<string> fakeNames)
     {
-        /*int i = Random.Range(0, possibleToppings.Count);
+        /*
+        */
+        possibleToppings.AddRange(ingredientNames);
+        possibleToppings.AddRange(fakeNames);
+        int i = Random.Range(0, possibleToppings.Count);
         name = possibleToppings[i];
         possibleToppings.RemoveAt(i);
-        */
-        name = "onions";
     }
     public List<string> getPossibleToppings()
     {
