@@ -10,8 +10,7 @@ public class Customer : Interactable
     {
         //summons a new Customer
         //animation for entering the restaraunt
-        Debug.Log("customer constructor");
-        
+        Debug.Log("Customer spawned");
         patience = 100;
     }
     public void Start()
@@ -21,6 +20,7 @@ public class Customer : Interactable
     public void leave()
     {
         //animation for leaving restaraunt
+        Debug.Log("CUSTOMER LEFT");
         Destroy(gameObject);
     }
     public void decresePatience()
