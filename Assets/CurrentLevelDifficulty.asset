@@ -15,13 +15,13 @@ MonoBehaviour:
   maxNumCustomers: 1
   customerDelay: 100
   customerPatienceDecay: 100
-  toppingsAvaliable: []
+  toppingsAvaliable:
+  - onions
   toppingsUnavaliable:
   - Sausage
   - Pineapple
   - Peppers
   - Pepperoni
-  - Onions
   locationsAvaliable: []
   locationsUnavaliable: []
   saucesAvaliable: []

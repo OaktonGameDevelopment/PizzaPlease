@@ -7,6 +7,7 @@ public class Customer : Interactable
     public Pizza pizza;
     public int patience{ get; set; }
     public LevelDifficulty poopoo;
+    public string sigma;
     public Customer()
     {
         //summons a new Customer
@@ -16,7 +17,17 @@ public class Customer : Interactable
     }
     public void Start()
     {
-        pizza = new Pizza(poopoo.toppingsAvaliable, poopoo.toppingsUnavaliable, poopoo.locationsAvaliable);
+        if (Random.Range(1, 3) == 1)
+        {
+            sigma = "M";
+        }
+        else
+        {
+            sigma = "F";
+        }
+        sigma = "F";
+        Debug.Log("before pizza constructor: " + poopoo);
+        pizza = new Pizza(poopoo);
     }
     public void leave()
     {
@@ -36,7 +47,7 @@ public class Customer : Interactable
         
 
 
-        Debug.Log(pizza.ToString());
+        //Debug.Log(pizza.ToString());
         List<Ingredient> ingredients = pizza.getIngredients();
         StartCoroutine(StartOrder(ingredients));
         
@@ -58,7 +69,7 @@ public class Customer : Interactable
         {
             Debug.Log("nside forloop");
             Debug.Log("waitbeforeeachbefore");
-            FindObjectOfType<AudioManager>().Play(ingredients[j].getName() + Random.Range(1,4));
+            FindObjectOfType<AudioManager>().Play(ingredients[j].getName() + Random.Range(1,4)+getGender());
             yield return new WaitForSeconds(1.69f);
             Debug.Log("waitbeforeeachafter");
             Debug.Log("donewithloop");
@@ -71,5 +82,10 @@ public class Customer : Interactable
 
 
 
+    }
+
+    public string getGender()
+    {
+        return sigma;
     }
 }

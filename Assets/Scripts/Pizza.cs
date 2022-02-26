@@ -13,13 +13,13 @@ public class Pizza
 
     //precondition: Must call on pizza class
     //postcondition: generates random toppings and a random location for a specific pizza.
-    public Pizza(List<string> ingredientNames, List<string> unavailableIngredientNames, List<string> locationNames)
+    public Pizza(LevelDifficulty levelDifficulty)
     {
         //System.Random rnd = new System.Random();
         for (int i = 0; i < numToppings; i++)
         {
             Debug.Log("pizza constructor");
-            ingredients.Add(new Ingredient(ingredientNames, unavailableIngredientNames));
+            ingredients.Add(new Ingredient(levelDifficulty));
         }
         for (int i = 0; i < numToppings; i++) 
         {

@@ -8,14 +8,14 @@ public class Ingredient
     [SerializeField] protected AudioManager audioManager;
     bool real;
 
-    public static List<string> possibleToppings;
+    public List<string> possibleToppings = new List<string>();
 
-    public Ingredient(List<string> ingredientNames, List<string> fakeNames)
+    public Ingredient(LevelDifficulty levelDifficulty)
     {
         /*
         */
-        possibleToppings.AddRange(ingredientNames);
-        possibleToppings.AddRange(fakeNames);
+        possibleToppings.AddRange(levelDifficulty.toppingsAvaliable);
+        possibleToppings.AddRange(levelDifficulty.toppingsUnavaliable);
         int i = Random.Range(0, possibleToppings.Count);
         name = possibleToppings[i];
         possibleToppings.RemoveAt(i);
