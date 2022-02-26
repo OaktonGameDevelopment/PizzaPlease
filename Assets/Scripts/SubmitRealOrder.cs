@@ -10,7 +10,7 @@ public class SubmitRealOrder : Interactable
     private Orders_Note orderScript;
     /*Precondition: the player must be named "Player"
      *              player must have the Orders_Note attached to it
-     *Postcondition: plays a noice whether a real or fake pizza was submitted
+     *Postcondition: plays a noise whether a real or fake pizza was submitted
      */
     protected override void interact()
     {
