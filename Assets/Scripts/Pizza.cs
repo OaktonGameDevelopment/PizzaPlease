@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pizza : MonoBehaviour
 {
     private string[] possibleToppings = { "Mushrooms", "Anchovies", "Pepperoni", "Bell Peppers", "Pineapple", "Olives" };
-    private string[] possibleLocations = { "The White House", "Blake Avenue", "Andale Drive", "Andover Road", "Dovedale South", "Durham Way North" };
+    private string[] possibleLocations = {"Blake Avenue", "Andale Drive", "Andover Road", "Dovedale South", "Durham Way North" };
     private string[] possibleSizes = { "large", "medium", "small" };
     private string toppings;
     private string location;
