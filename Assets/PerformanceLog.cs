@@ -57,18 +57,23 @@ public class PerformanceLog : MonoBehaviour //Keeps track of your preformance fo
     }
     public void panelEnable()
     {
+        Debug.Log("panelEnable");
         Panel.SetActive(true);
         realSubmitted.text = realSubmittedNum.ToString();
         fakeRejected.text = fakeRejectedNum.ToString();
         realRejected.text = realRejectedNum.ToString();
         fakeSubmitted.text = fakeSubmittedNum.ToString();
+        Cursor.lockState = CursorLockMode.Confined;
     }
     public void next()
     {
+        Debug.Log("next");
+        Debug.Log(Panel);
         Panel.SetActive(false);
         realSubmittedNum = 0;
         fakeRejectedNum = 0;
         fakeSubmittedNum = 0;
         realRejectedNum = 0;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

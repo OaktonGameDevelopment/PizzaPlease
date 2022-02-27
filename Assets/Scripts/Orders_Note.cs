@@ -5,16 +5,15 @@ using UnityEngine.UI;
 
 public class Orders_Note : MonoBehaviour
 {
-    public Image hand;
-    public Sprite orderNotePic;
+    public GameObject hand;
     public Pizza curPizza { get;  set; }
     public void takeOrder()
     {
-        hand.sprite = orderNotePic;
+        hand.SetActive(true);
     }
 
     public void submit()
     {
-        hand.sprite = null;
+        hand.SetActive(false);
     }
 }
