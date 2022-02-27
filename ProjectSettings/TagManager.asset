@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Mushrooms
+  - Olives
+  - Pepperoni
+  - Pineapple
+  - Anchovies
+  - Bacon
+  - Sausage
+  - Peppers
+  - Onions
+  - Andover Road
+  - Andale Drive
+  - Blake Avenue
+  - Dovedale South
+  - Durham Way North
+  - Map
   layers:
   - Default
   - TransparentFX

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CurrentLevelDifficulty
   m_EditorClassIdentifier: 
   maxNumCustomers: 3
-  customerDelay: 10
-  customerPatienceDecay: 5
+  customerDelay: 100
+  customerPatienceDecay: 10
   toppingsAvaliable: []
   toppingsUnavaliable:
   - Sausage
@@ -22,9 +22,18 @@ MonoBehaviour:
   - Peppers
   - Pepperoni
   - Onions
-  locationsAvaliable: []
-  locationsUnavaliable: []
-  saucesAvaliable: []
-  saucesUnavalable: []
-  sizesAvaliable: []
-  sizesUnavalable: []
+  locationsAvaliable:
+  - Andover Road
+  locationsUnavaliable:
+  - Blake Avenue
+  - Andale Drive
+  - Dovedale South
+  - Durham Way North
+  saucesAvaliable:
+  - a
+  saucesUnavalable:
+  - a
+  sizesAvaliable:
+  - a
+  sizesUnavalable:
+  - a
