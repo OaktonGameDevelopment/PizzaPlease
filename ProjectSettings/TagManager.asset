@@ -18,6 +18,7 @@ TagManager:
   - Blake Avenue
   - Dovedale South
   - Durham Way North
+  - Map
   layers:
   - Default
   - TransparentFX

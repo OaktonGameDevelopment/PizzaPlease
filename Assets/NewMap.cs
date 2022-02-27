@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class Map :Interactable
+public class NewMap : Interactable
 {
     public GameObject popUpBox;
     [SerializeField] private LevelDifficulty a;
@@ -19,7 +18,8 @@ public class Map :Interactable
     public void PopUp()
     {
         popUpBox.SetActive(true);
-        
+
 
     }
+
 }
