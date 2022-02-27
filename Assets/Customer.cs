@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Customer : Interactable
 {
-    public int patience{ get; set; }
+    public float patience{ get; set; }
     public Customer()
     {
         //summons a new Customer
         //animation for entering the restaraunt
-        Debug.Log("Customer spawned");
         patience = 100;
     }
     public void leave()
@@ -20,6 +19,7 @@ public class Customer : Interactable
     }
     public void decresePatience()
     {
+        Debug.Log("customer patience: " + patience);
         patience--;
         gameObject.GetComponent<MeshRenderer>().material.color += Color.red;
     }
