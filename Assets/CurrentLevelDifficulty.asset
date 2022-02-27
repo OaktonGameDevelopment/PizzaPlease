@@ -22,8 +22,13 @@ MonoBehaviour:
   - Peppers
   - Pepperoni
   - Onions
-  locationsAvaliable: []
-  locationsUnavaliable: []
+  locationsAvaliable:
+  - Andover Road
+  locationsUnavaliable:
+  - Blake Avenue
+  - Andale Drive
+  - Dovedale South
+  - Durham Way North
   saucesAvaliable: []
   saucesUnavalable: []
   sizesAvaliable: []
