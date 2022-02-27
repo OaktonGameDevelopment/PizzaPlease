@@ -15,7 +15,8 @@ MonoBehaviour:
   maxNumCustomers: 1
   customerDelay: 100
   customerPatienceDecay: 100
-  toppingsAvaliable: []
+  toppingsAvaliable:
+  - Olives
   toppingsUnavaliable:
   - Sausage
   - Pineapple
@@ -29,7 +30,11 @@ MonoBehaviour:
   - Andale Drive
   - Dovedale South
   - Durham Way North
-  saucesAvaliable: []
-  saucesUnavalable: []
-  sizesAvaliable: []
-  sizesUnavalable: []
+  saucesAvaliable:
+  - a
+  saucesUnavalable:
+  - a
+  sizesAvaliable:
+  - a
+  sizesUnavalable:
+  - a
