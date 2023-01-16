@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,5 +28,11 @@ public class Customer : Interactable
     {
         //start interaction with customer
         Debug.Log("interact with customer");
+        generateOrder();
+    }
+
+    private void generateOrder()
+    {
+        throw new NotImplementedException();
     }
 }
